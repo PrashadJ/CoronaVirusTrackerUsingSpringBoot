@@ -14,3 +14,7 @@
 # Maven
 log/
 target/
+
+HELP.md
+mvnw
+mvnw.cmd
