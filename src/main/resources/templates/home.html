@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>CoronaVirusTracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>CoronaVirus application tool</h1>
+<div class="alert alert-success" role="alert">
+    <p>author: Prashad</p>
+</div>
+
+<div class="jumbotron">
+    <h2 class="display-4">Total cases reported till date:</h2>
+    <h2 th:text="${totalCases}"></h2>
+</div>
+<div class="list-group">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <td>Country/Region</td>
+                <td>AverageCases</td>
+                <td>MaxCases</td>
+                <td>TotalCases</td>
+            </tr>
+            <tr th:each="statsData : ${CoronaStatsList}">
+                <td th:text="${statsData.getCountry}">First Name</td>
+                <td th:text="${statsData.getAvgCases}">Last Name</td>
+                <td th:text="${statsData.getMaxCases}">Last Name</td>
+                <td th:text="${statsData.getTotalCases}">Last Name</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
